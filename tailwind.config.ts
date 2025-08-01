@@ -52,6 +52,26 @@ export default {
 					DEFAULT: 'hsl(var(--card))',
 					foreground: 'hsl(var(--card-foreground))'
 				},
+				success: {
+					DEFAULT: 'hsl(var(--success))',
+					foreground: 'hsl(var(--success-foreground))'
+				},
+				warning: {
+					DEFAULT: 'hsl(var(--warning))',
+					foreground: 'hsl(var(--warning-foreground))'
+				},
+				subject: {
+					red: 'hsl(var(--subject-red))',
+					orange: 'hsl(var(--subject-orange))',
+					yellow: 'hsl(var(--subject-yellow))',
+					green: 'hsl(var(--subject-green))',
+					blue: 'hsl(var(--subject-blue))',
+					purple: 'hsl(var(--subject-purple))',
+					pink: 'hsl(var(--subject-pink))',
+					teal: 'hsl(var(--subject-teal))',
+					indigo: 'hsl(var(--subject-indigo))',
+					cyan: 'hsl(var(--subject-cyan))'
+				},
 				sidebar: {
 					DEFAULT: 'hsl(var(--sidebar-background))',
 					foreground: 'hsl(var(--sidebar-foreground))',

@@ -2,41 +2,72 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
-*/
+/* Study Timetable Design System - Academic & Clean */
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    --background: 250 60% 98%;
+    --foreground: 230 15% 15%;
 
     --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card-foreground: 230 15% 15%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover-foreground: 230 15% 15%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    --primary: 240 100% 65%;
+    --primary-foreground: 0 0% 100%;
+    --primary-glow: 240 100% 75%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    --secondary: 250 60% 95%;
+    --secondary-foreground: 230 15% 25%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    --muted: 250 60% 95%;
+    --muted-foreground: 230 10% 45%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    --accent: 200 95% 90%;
+    --accent-foreground: 200 100% 25%;
 
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    --success: 140 60% 50%;
+    --success-foreground: 0 0% 100%;
 
-    --radius: 0.5rem;
+    --warning: 45 100% 60%;
+    --warning-foreground: 45 100% 10%;
+
+    --border: 250 60% 90%;
+    --input: 250 60% 94%;
+    --ring: 240 100% 65%;
+
+    --radius: 0.75rem;
+
+    /* Study block colors - soft academic palette */
+    --subject-red: 0 70% 75%;
+    --subject-orange: 25 80% 70%;
+    --subject-yellow: 45 90% 75%;
+    --subject-green: 140 60% 70%;
+    --subject-blue: 200 80% 75%;
+    --subject-purple: 260 70% 75%;
+    --subject-pink: 320 60% 80%;
+    --subject-teal: 180 60% 70%;
+    --subject-indigo: 230 70% 75%;
+    --subject-cyan: 190 80% 70%;
+
+    /* Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--primary-glow)));
+    --gradient-subtle: linear-gradient(180deg, hsl(var(--background)), hsl(var(--secondary)));
+    --gradient-card: linear-gradient(145deg, hsl(0 0% 100% / 0.8), hsl(250 60% 98% / 0.4));
+
+    /* Shadows */
+    --shadow-soft: 0 2px 20px hsl(230 15% 15% / 0.08);
+    --shadow-card: 0 4px 25px hsl(230 15% 15% / 0.1);
+    --shadow-floating: 0 8px 40px hsl(230 15% 15% / 0.12);
+
+    /* Animations */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-spring: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 
     --sidebar-background: 0 0% 98%;
 
@@ -56,33 +87,58 @@ All colors MUST be HSL.
   }
 
   .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
+    --background: 230 20% 8%;
+    --foreground: 250 60% 95%;
 
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
+    --card: 230 20% 10%;
+    --card-foreground: 250 60% 95%;
 
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
+    --popover: 230 20% 10%;
+    --popover-foreground: 250 60% 95%;
 
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
+    --primary: 240 100% 70%;
+    --primary-foreground: 230 20% 8%;
+    --primary-glow: 240 100% 80%;
 
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
+    --secondary: 230 20% 15%;
+    --secondary-foreground: 250 60% 90%;
 
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
+    --muted: 230 20% 15%;
+    --muted-foreground: 230 10% 60%;
 
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
+    --accent: 200 95% 85%;
+    --accent-foreground: 200 100% 15%;
 
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
 
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
+    --success: 140 60% 50%;
+    --success-foreground: 0 0% 100%;
+
+    --warning: 45 100% 60%;
+    --warning-foreground: 45 100% 10%;
+
+    --border: 230 20% 20%;
+    --input: 230 20% 18%;
+    --ring: 240 100% 70%;
+
+    /* Dark mode subject colors - slightly muted for better contrast */
+    --subject-red: 0 65% 65%;
+    --subject-orange: 25 75% 60%;
+    --subject-yellow: 45 85% 65%;
+    --subject-green: 140 55% 60%;
+    --subject-blue: 200 75% 65%;
+    --subject-purple: 260 65% 65%;
+    --subject-pink: 320 55% 70%;
+    --subject-teal: 180 55% 60%;
+    --subject-indigo: 230 65% 65%;
+    --subject-cyan: 190 75% 60%;
+
+    /* Dark gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--primary-glow)));
+    --gradient-subtle: linear-gradient(180deg, hsl(var(--background)), hsl(var(--secondary)));
+    --gradient-card: linear-gradient(145deg, hsl(230 20% 12% / 0.8), hsl(230 20% 8% / 0.4));
+
     --sidebar-background: 240 5.9% 10%;
     --sidebar-foreground: 240 4.8% 95.9%;
     --sidebar-primary: 224.3 76.3% 48%;
